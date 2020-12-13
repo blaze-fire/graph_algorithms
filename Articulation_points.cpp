@@ -30,8 +30,10 @@ class Articulation{
       if(!visited[to]){
         dfs(root,to,at);
         low[at] = std::min(low[at],low[to]);        //happens on callback and here happens the propogation of low link values
-        if(ids[at] < low[to])
+        //# Articulation point found via bridg
+        if(ids[at] < low[to])                       //Being explicit here it could be just <=
           isArt[at]=true;
+       //# Articulation point found via cycle 
         if(ids[at] == low[to])
           isArt[at] = true;        
       }
@@ -47,7 +49,7 @@ class Articulation{
     for(int i=0; i<numVertices; i++){
 
       if(!visited[i]) {
-        outEdgeCount = 0;
+        outEdgeCount = 0;                 //Reset Edge count
         dfs(i,i,-1);
         if(outEdgeCount>1)  isArt[i]=true; 
       }
