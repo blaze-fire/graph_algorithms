@@ -1,3 +1,4 @@
+//Finds all the bridges on an undirected graph.
 #include <iostream>
 #include <vector>
 #include <array>
@@ -18,6 +19,7 @@ class Bridge{
     g[u].push_back(v);
     g[v].push_back(u);
   }
+  
   void dfs(int at, int parent){
     visited[at] = true;
     id++;
@@ -49,7 +51,10 @@ class Bridge{
 
     }
   }
-
+  // Returns a list of pairs of nodes indicating which nodes form bridges.
+  // The returned list is always of even length and indexes (2*i, 2*i+1) form a
+  // pair. For example, nodes at indexes (0, 1) are a pair, (2, 3) are another
+  // pair, etc...
   void print(){
     for(int i=0;i<bridges.size()/2;i++){
       cout<<"Bridge between node : "<<bridges.at(2*i)<<" and "<<bridges.at(2*i+1)<<endl;

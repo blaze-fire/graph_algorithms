@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
+#include <map>
 
 
 using namespace std;
 
 class Bellman_Ford{
     const int numVertices = 6;
-    unordered_map <int,vector<pair<int,int>>> l;
+    map <int,vector<pair<int,int>>> l;
 
     public:
     void addEdge(int u, int v, int wt){ // storing them as from edge, to edge, weight 
