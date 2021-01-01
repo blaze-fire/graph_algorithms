@@ -1,3 +1,7 @@
+  
+/**
+ * An implementation of a recursive approach to DFS Time Complexity: O(V + E)
+ */
 #include <iostream>
 #include <vector>
 
@@ -12,8 +16,8 @@ void addEdges(int u, int v, vector<int> g[]){
 
 void dfs(int current, bool visited[], vector<int> g[]){
     visited[current] = true;
-
-    for(auto itr = g[current].begin(); itr<g[current].end(); itr++){
+    cout<<current<<" :  ";
+    for(vector<int>::iterator itr = g[current].begin(); itr<g[current].end(); itr++){
         cout<<*itr<<" , ";
     }
     cout<<endl;

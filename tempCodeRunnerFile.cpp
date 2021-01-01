@@ -1,2 +1,12 @@
-b.findBridges();
-  b.print();
+  int source =0;
+  vector<int> adjList[numVertices];
+  vector<bool> visitedVertex(numVertices,false);
+  createAndAddEdge(adjList, 0, 1);
+  createAndAddEdge(adjList, 0, 2);
+  createAndAddEdge(adjList, 1, 5);
+  createAndAddEdge(adjList, 2, 3);
+  createAndAddEdge(adjList, 2, 4);
+  createAndAddEdge(adjList, 3, 3);
+  createAndAddEdge(adjList, 4, 4);
+  createAndAddEdge(adjList, 5, 5);
+  BFS(adjList, visitedVertex, source);
