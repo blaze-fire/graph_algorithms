@@ -48,15 +48,12 @@ void Dijkstra(vector <Pair> adjList[],int source){
 int main(){
   vector <Pair> adjList[numVertices];
 
-  addEdge(adjList,0,5,1);
-  addEdge(adjList,0,10,3);
-  addEdge(adjList,1,2,2);
-  addEdge(adjList,1,10,5);
-  addEdge(adjList,1,5,4);
-  addEdge(adjList,2,1,3);
-  addEdge(adjList,2,5,4);
-  addEdge(adjList,2,3,0);
-  addEdge(adjList,4,2,5);  
+  addEdge(adjList,0,1,4);
+  addEdge(adjList,0,2,1);
+  addEdge(adjList,2,1,2);
+  addEdge(adjList,2,3,5);
+  addEdge(adjList,1,3,1);
+  addEdge(adjList,3,4,3);  
 
   Dijkstra(adjList, 0);
 
